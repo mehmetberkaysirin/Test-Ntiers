@@ -1,0 +1,38 @@
+(*) Please follow the steps below after installation.!
+ 
+This file destination path "C:\Users\manas\source\repos\Test\"
+ 
+ 
+Create empty solution
+Solution Explorer > My project > right click on my project> add new project
+Search and select Class Library (.NET Core) and click next
+Project name example: "Myproject.Business"
+Create 4 project of the same type.
+Myproject.Business,Myproject.Core,Myproject.DataAccess,Myproject.Entities
+Delete class1.cs files inside projects.
+ 
+Solution Explorer > My project > right click on my project> add new project
+Search and select Asp.net Core Web Application
+Project name example "Myproject.WebApi"
+Click next and select settings in the opened claw, .Net Core, Asp.Net Core 2.1, API project.
+Advanced setting: Unchecked all.Create project.
+ 
+Select myproject.Entities > Dependencies > right click and click "Add reference"
+Left side tab menu inside Project> Solution > Check Myproject.Core and click "OK".
+ 
+Select myproject.DataAccess > Dependencies > right click and click "Add reference"
+Left side tab menu inside Project> Solution > Check Myproject.Core, Myproject.Entities and click "OK"
+ 
+Select myproject.Business > Dependencies > right click and click "Add reference"
+Left side tab menu inside Project> Solution > Check Myproject.DataAccess and click "OK".
+ 
+Select myproject.WebApi > Dependencies > right click and click "Add reference"
+Left side tab menu inside Project> Solution > Check Myproject.Business and click "OK".
+ 
+Select myproject.Business > Dependencies > right click and click "Manage Nuget Packages"
+Select in menu, click Browse and search Microsoft.EntityFrameworkCore and click Install
+Select in menu, click Browse and search Microsoft.EntityFrameworkCore.SqlServer and click Install
+ 
+Select myproject.WebApi > Dependencies > right click and click "Manage Nuget Packages"
+Select in menu, click Browse and search Microsoft.EntityFrameworkCore and click Install
+Select in menu, click Browse and search Microsoft.VisualStudio.Web.CodeGeneration.Design and click Install
